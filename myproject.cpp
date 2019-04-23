@@ -193,3 +193,84 @@ class food
 
 
 //END OF CLASS FOOD
+//***************************************
+// THIS CLASS CONTAINS INFORMATION
+//   RELATED TO CUSTOMER
+//***************************************
+ 
+ 
+class customer
+{
+   private:
+     int q,w;
+     fstream f1;
+     struct cust
+     {
+	  int c_no;
+	  char c_name[20];
+	  char c_add[80];
+	  int a_date;
+	  int a_month;
+	  int a_year;
+	  int d_date;
+	  int d_month;
+	  int d_year;
+	  int room_no;
+	  char room_type[25];
+     }p;
+   public:
+     food j;
+
+     customer()
+     {
+	  p.c_no=0;
+	  p.d_date=0;
+	  p.d_month=0;
+     }
+
+//**********************************
+//  FUNCTION FOR CUSTOMER BILL
+//*****************************
+
+void cust_bill()
+     {
+	  int cho;
+	  do
+	  {
+	       cleardevice();
+	       f1.close();
+	       setfillstyle(7,1);
+	       floodfill(0,0,4);
+	       setfillstyle(7,10);
+	       bar(10,70,600,450);
+	       rectangle(10,70,600,450);
+	       setfillstyle(1,7);
+	       bar(17,77,593,443);
+	       rectangle(17,77,593,443);
+	       setcolor(5);
+	       setfillstyle(1,2);
+	       settextstyle(7,0,1);
+	       setcolor(9);
+	       setfillstyle(1,2);
+	       bar(210,140,410,238);
+	       rectangle(210,140,410,158);
+	       rectangle(210,140,410,174);
+	       rectangle(210,140,410,190);
+	       rectangle(210,140,410,206);
+	       rectangle(210,140,410,222);
+	       rectangle(210,140,410,238);
+	       setcolor(4);
+	       settextstyle(1,0,4);
+	       outtextxy(180,20,"HOTEL BILL");
+	       line(180,60,383,60);
+	       setcolor(4);
+	       settextstyle(1,0,1);
+	       outtextxy(210,137,"  1.  ROOM BILL");
+	       outtextxy(210,170,"  2.  FOOD BILL");
+	       outtextxy(210,200,"  3.  MAIN MENU");
+	       outtextxy(63,318,"ENTER CHOICE FOR WHICH YOU WANT THE BILL");
+	       gotoxy(67,21);
+	       cin>>cho;
+	       choose(cho);
+	  }while(cho!=3);//END OF WHILE
+     }
