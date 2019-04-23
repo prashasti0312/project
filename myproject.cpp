@@ -149,3 +149,47 @@ class food
 		    bill=dt*f.price;
 	       }
 	  }//END OF WHILE
+	   if(bill==-1)
+	  {
+	       setcolor(1);
+
+	       for(int i=0;i<=20;i++)
+	       {
+	       setcolor(1);
+	       outtextxy(30,220,"ITEM IS NOT PRESENT");
+	       delay(100);
+	       setcolor(WHITE);
+	       outtextxy(30,220,"ITEM IS NOT PRESENT");
+	       delay(100);
+	     //  delay(2500);
+	     }
+	  }
+	  else
+	  {
+	       char t[5],b[5];
+	       setcolor(1);
+	       itoa(dt,t,10);
+	       itoa(bill,b,10);
+	       outtextxy(30,250,"NAME FOOD.NAME      QUANTITY      BILL ");
+	       setcolor(1);
+	       settextstyle(4,0,1);
+	       outtextxy(30,280,c_name);
+	       outtextxy(140,280,f_name);
+	       outtextxy(320,280,t);
+	       outtextxy(445,280,b);
+	       getch();
+	  }
+     }
+//************************************
+//  FUNCTION TO DELETE FOOD MENU
+//******************************
+     void food::del_all()
+     {
+	  remove("food.txt");
+	  p1.open("food.txt",ios::out);
+	  p1.close();
+	  c=0;
+     }
+
+
+//END OF CLASS FOOD
