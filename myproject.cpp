@@ -274,3 +274,26 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+
+void choose(int a)
+     {
+	  switch(a)
+	  {
+
+
+		case 1:
+		{
+			room_bill();
+			break;
+		}
+		case 2:
+		{
+			j.food_bill();
+			break;
+		}
+		case 3:
+			break;
+	  }
+     }
+
+
