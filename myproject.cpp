@@ -87,3 +87,65 @@ class food
 		    if(ch=='y'||ch=='Y')
 		    {
 			 del_all();
+			 //CALLING DELETE FUNCTION
+		    }
+	       }
+	  }
+     }
+
+//***************************************
+//  FUNCTION TO APPEND IN FOOD MENU
+//***************************************
+
+     void food::app_fmenu(void)
+     {
+	  p1.open("food.txt",ios::app|ios::binary);
+	  outtextxy(30,360,"ENTER ITEM NAME U WANTTO ADD");
+	  gotoxy(60,23);
+	  gets(f.name);
+	  outtextxy(30,380,"ENTER THE PRICE");
+	  gotoxy(60,24);
+	  cin>>f.price;
+	  p1.write((char*)&f,sizeof(f));
+	  p1.close();
+	  getch();
+     }
+
+//*****************************
+//  FUNCTION FOR FOOD BILL
+//*****************************
+
+     void food::food_bill()
+     {
+	  double bill=-1;
+	  char c_name[20],f_name[20];
+	  int dt;
+	  cleardevice();
+	  setfillstyle(7,1);
+	  floodfill(0,0,4);
+	  setfillstyle(7,10);
+	  bar(17,40,605,420);
+	  rectangle(17,40,605,420);
+	  setfillstyle(1,7);
+	  bar(24,47,598,413);
+	  rectangle(24,47,598,413);
+	  setcolor(4);
+	  settextstyle(7,0,1);
+	  outtextxy(30,70,"ENTER CUSTOMER NAME ");
+	  gotoxy(50,6);
+	  cin>>c_name;
+	  outtextxy(30,120,"ENTER ITEM NAME TAKEN");
+	  gotoxy(50,9);
+	  cin>>f_name;
+	  outtextxy(30,170,"ENTER THE QUANTITY");
+	  gotoxy(50,12);
+	  cin>>dt;
+	  p1.close();
+	  p1.open("food.txt",ios::in|ios::binary);
+	  while(p1.read((char*)&f,sizeof(f)))
+	  {
+	       if(strcmp(f.name,f_name)==0)
+	       {
+		    bill=dt*f.price;
+	       }
+	  }//END OF WHILE
