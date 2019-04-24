@@ -307,3 +307,23 @@ printf("%d->", temp->data);
 temp = temp->link;
 }
 
+
+int main()
+{
+push(11);
+push(22);
+push(33);
+push(44);
+
+display();
+
+printf("\nTop element is %d\n", peek());
+
+pop();
+pop();
+
+display();
+
+printf("\nTop element is %d\n", peek());
+
+
