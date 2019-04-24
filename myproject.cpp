@@ -274,3 +274,5 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+
+=
