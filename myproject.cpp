@@ -372,5 +372,85 @@ getch();
 }
 }
 
+//hotel management shows available rooms
+void HotelMgnt::getAvailRoom()
+{
+int i,found=0;
+for(i=0;i&lt;count;i++)
+{
+if(rooms[i].status==0)
+{
+displayRoom(rooms[i]);
+cout&lt;&lt;"\n\nPress enter for next room";
+found=1;
+getch();
+}
+}
+if(found==0)
+{
+cout&lt;&lt;"\nAll rooms are reserved";
+getch();
+}
+}
+
+
+//hotel management shows all persons that have booked room
+void HotelMgnt::searchCustomer(char *pname)
+{
+int i,found=0;
+for(i=0;i&lt;count;i++)
+{
+if(rooms[i].status==1 &amp;&amp; stricmp(rooms[i].cust.name,pname)==0)
+{
+cout&lt;&lt;"\nCustomer Name: "&lt;&lt;rooms[i].cust.name;
+cout&lt;&lt;"\nRoom Number: "&lt;&lt;rooms[i].roomNumber;
+
+cout&lt;&lt;"\n\nPress enter for next record";
+found=1;
+getch();
+}
+}
+if(found==0)
+{
+cout&lt;&lt;"\nPerson not found.";
+getch();
+}
+}
+
+
+//hotel managemt generates the bill of the expenses
+void HotelMgnt::checkOut(int roomNum)
+{
+int i,found=0,days,rno;
+float billAmount=0;
+for(i=0;i&lt;count;i++)
+{
+if(rooms[i].status==1 &amp;&amp; rooms[i].roomNumber==roomNum)
+{
+//rno = rooms[i].roomNumber;
+found=1;
+//getch();
+break;
+}
+}
+if(found==1)
+{
+cout&lt;&lt;"\nEnter Number of Days:\t";
+cin&gt;&gt;days;
+billAmount=days * rooms[i].rent;
+
+cout&lt;&lt;"\n\t######## CheckOut Details ########\n";
+cout&lt;&lt;"\nCustomer Name : "&lt;&lt;rooms[i].cust.name;
+cout&lt;&lt;"\nRoom Number : "&lt;&lt;rooms[i].roomNumber;
+cout&lt;&lt;"\nAddress : "&lt;&lt;rooms[i].cust.address;
+cout&lt;&lt;"\nPhone : "&lt;&lt;rooms[i].cust.phone;
+cout&lt;&lt;"\nTotal Amount Due : "&lt;&lt;billAmount&lt;&lt;" /";
+cout&lt;&lt;"\nAdvance Paid: "&lt;&lt;rooms[i].cust.payment_advance&lt;&lt;" /";
+cout&lt;&lt;"\n*** Total Payable: "&lt;&lt;billAmount-rooms[i].cust.payment_advance&lt;&lt;"/ only";
+
+rooms[i].status=0;
+}
+getch();
+}
 
 //end editted by Neha
