@@ -274,3 +274,103 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+
+
+void Room::displayRoom(Room tempRoom)
+{
+cout&lt;&lt;"\nRoom Number: \t"&lt;&lt;tempRoom.roomNumber;
+cout&lt;&lt;"\nType AC/Non-AC (A/N) "&lt;&lt;tempRoom.ac;
+cout&lt;&lt;"\nType Comfort (S/N) "&lt;&lt;tempRoom.type;
+cout&lt;&lt;"\nType Size (B/S) "&lt;&lt;tempRoom.stype;
+cout&lt;&lt;"\nRent: "&lt;&lt;tempRoom.rent;
+}
+
+//hotel management class
+class HotelMgnt:protected Room
+{
+public:
+void checkIn();
+void getAvailRoom();
+void searchCustomer(char *);
+void checkOut(int);
+void guestSummaryReport();
+};
+
+
+void HotelMgnt::guestSummaryReport(){
+
+if(count==0){
+	cout&lt;&lt;"\n No Guest in Hotel !!";
+}	
+for(int i=0;i&lt;count;i++)
+{
+if(rooms[i].status==1)
+{
+cout&lt;&lt;"\n Customer First Name : "&lt;&lt;rooms[i].cust.name;
+cout&lt;&lt;"\n Room Number : "&lt;&lt;rooms[i].roomNumber;
+cout&lt;&lt;"\n Address (only city) : "&lt;&lt;rooms[i].cust.address;
+cout&lt;&lt;"\n Phone : "&lt;&lt;rooms[i].cust.phone;
+cout&lt;&lt;"\n---------------------------------------";	
+}
+	
+}
+
+getch();
+}
+
+//hotel management reservation of room
+void HotelMgnt::checkIn()
+{
+int i,found=0,rno;
+
+class Room room;
+cout&lt;&lt;"\nEnter Room number : ";
+cin&gt;&gt;rno;
+for(i=0;i&lt;count;i++)
+{
+if(rooms[i].roomNumber==rno)
+{
+found=1;
+break;
+}
+}
+if(found==1)
+{
+if(rooms[i].status==1)
+{
+cout&lt;&lt;"\nRoom is already Booked";
+getch();
+return;
+}
+
+cout&lt;&lt;"\nEnter booking id: ";
+cin&gt;&gt;rooms[i].cust.booking_id;
+
+cout&lt;&lt;"\nEnter Customer Name (First Name): ";
+cin&gt;&gt;rooms[i].cust.name;
+
+cout&lt;&lt;"\nEnter Address (only city): ";
+cin&gt;&gt;rooms[i].cust.address;
+
+cout&lt;&lt;"\nEnter Phone: ";
+cin&gt;&gt;rooms[i].cust.phone;
+
+cout&lt;&lt;"\nEnter From Date: ";
+cin&gt;&gt;rooms[i].cust.from_date;
+
+cout&lt;&lt;"\nEnter to  Date: ";
+cin&gt;&gt;rooms[i].cust.to_date;
+
+
+cout&lt;&lt;"\nEnter Advance Payment: ";
+cin&gt;&gt;rooms[i].cust.payment_advance;
+
+rooms[i].status=1;
+
+cout&lt;&lt;"\n Customer Checked-in Successfully..";
+getch();
+}
+}
+
+
+//end editted by Neha
