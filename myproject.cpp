@@ -274,3 +274,45 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+//managing rooms (adding and searching available rooms)
+void manageRooms()
+{
+class Room room;
+int opt,rno,i,flag=0;
+char ch;
+do
+{
+system("cls");
+cout&lt;&lt;"\n### Manage Rooms ###";
+cout&lt;&lt;"\n1. Add Room";
+cout&lt;&lt;"\n2. Search Room";
+cout&lt;&lt;"\n3. Back to Main Menu";
+cout&lt;&lt;"\n\nEnter Option: ";
+cin&gt;&gt;opt;
+
+
+//switch statement
+switch(opt)
+{
+case 1:
+cout&lt;&lt;"\nEnter Room Number: ";
+cin&gt;&gt;rno;
+i=0;
+for(i=0;i&lt;count;i++)
+{
+if(rooms[i].roomNumber==rno)
+{
+flag=1;
+}
+}
+if(flag==1)
+{
+cout&lt;&lt;"\nRoom Number is Present.\nPlease enter unique Number";
+flag=0;
+getch();
+}
+else
+{
+rooms[count]=room.addRoom(rno);
+count++;
+}
