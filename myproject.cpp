@@ -292,4 +292,18 @@ cout&lt;&lt;"\n3. Back to Main Menu";
 cout&lt;&lt;"\n\nEnter Option: ";
 cin&gt;&gt;opt;
 
+struct Node* temp;
+if (top == NULL)
+{
+printf("\nStack Underflow");
+exit(1);
+}
+else
+{
+temp = top;
+while (temp != NULL)
+{
+printf("%d->", temp->data);
+temp = temp->link;
+}
 
