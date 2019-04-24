@@ -274,3 +274,22 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+
+
+//managing rooms (adding and searching available rooms)
+void manageRooms()
+{
+class Room room;
+int opt,rno,i,flag=0;
+char ch;
+do
+{
+system("cls");
+cout&lt;&lt;"\n### Manage Rooms ###";
+cout&lt;&lt;"\n1. Add Room";
+cout&lt;&lt;"\n2. Search Room";
+cout&lt;&lt;"\n3. Back to Main Menu";
+cout&lt;&lt;"\n\nEnter Option: ";
+cin&gt;&gt;opt;
+
+
