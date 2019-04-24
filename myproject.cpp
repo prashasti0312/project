@@ -274,6 +274,7 @@ void cust_bill()
 	       choose(cho);
 	  }while(cho!=3);//END OF WHILE
      }
+
 //managing rooms (adding and searching available rooms)
 void manageRooms()
 {
@@ -289,6 +290,41 @@ cout&lt;&lt;"\n2. Search Room";
 cout&lt;&lt;"\n3. Back to Main Menu";
 cout&lt;&lt;"\n\nEnter Option: ";
 cin&gt;&gt;opt;
+
+
+struct Node* temp;
+if (top == NULL)
+{
+printf("\nStack Underflow");
+exit(1);
+}
+else
+{
+temp = top;
+while (temp != NULL)
+{
+printf("%d->", temp->data);
+temp = temp->link;
+}
+
+
+int main()
+{
+push(11);
+push(22);
+push(33);
+push(44);
+
+display();
+
+printf("\nTop element is %d\n", peek());
+
+pop();
+pop();
+
+display();
+
+printf("\nTop element is %d\n", peek());
 
 
 //switch statement
