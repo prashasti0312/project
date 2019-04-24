@@ -275,4 +275,3 @@ void cust_bill()
 	  }while(cho!=3);//END OF WHILE
      }
 
-=
