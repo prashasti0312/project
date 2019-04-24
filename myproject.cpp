@@ -316,3 +316,65 @@ else
 rooms[count]=room.addRoom(rno);
 count++;
 }
+
+
+break;
+case 2:
+cout&lt;&lt;"\nEnter room number: ";
+cin&gt;&gt;rno;
+room.searchRoom(rno);
+break;
+case 3:
+//nothing to do
+break;
+default:
+cout&lt;&lt;"\nPlease Enter correct option";
+break;
+}
+}while(opt!=3);
+}
+using namespace std;
+int main()
+{
+class HotelMgnt hm;
+int i,j,opt,rno;
+char ch;
+char pname[100];
+
+system("cls");
+
+do
+{
+system("cls");
+cout&lt;&lt;"######## Hotel Management #########\n";
+cout&lt;&lt;"\n1. Manage Rooms";
+cout&lt;&lt;"\n2. Check-In Room";
+cout&lt;&lt;"\n3. Available Rooms";
+cout&lt;&lt;"\n4. Search Customer";
+cout&lt;&lt;"\n5. Check-Out Room";
+cout&lt;&lt;"\n6. Guest Summary Report";
+cout&lt;&lt;"\n7. Exit";
+cout&lt;&lt;"\n\nEnter Option: ";
+cin&gt;&gt;opt;
+switch(opt)
+{
+case 1:
+manageRooms();
+break;
+case 2:
+if(count==0)
+{
+cout&lt;&lt;"\nRooms data is not available.\nPlease add the rooms first.";
+getch();
+}
+else
+hm.checkIn();
+break;
+case 3:
+if(count==0)
+{
+cout&lt;&lt;"\nRooms data is not available.\nPlease add the rooms first.";
+getch();
+}
+
+
