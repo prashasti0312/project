@@ -500,3 +500,26 @@ else
 count++;    }
 
 break;
+case 2:
+
+cout<<"\nEnter room number: ";
+
+cin>>rno;
+
+room.searchRoom(rno);
+
+break;
+
+case 3:
+
+break;
+
+default:
+
+cout<<"\nPlease Enter correct option";
+
+break;    }
+
+}  while(opt!=3);
+
+}  using namespace std;
