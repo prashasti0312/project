@@ -523,3 +523,38 @@ break;    }
 }  while(opt!=3);
 
 }  using namespace std;
+int main()
+
+{  class HotelMgnt hm;
+
+int i,j,opt,rno;
+
+char ch;
+
+char pname[100];
+
+system("cls");
+
+do
+
+{   system("cls");
+
+cout<<"######## Hotel Management #########\n";
+
+cout<<"\n1. Manage Rooms";
+
+cout<<"\n2. Check-In Room";
+
+cout<<"\n3. Available Rooms";
+
+cout<<"\n4. Search Customer";
+
+cout<<"\n5. Check-Out Room";
+
+cout<<"\n6. Guest Summary Report";
+
+cout<<"\n7. Exit";
+
+cout<<"\n\nEnter Option: ";
+
+cin>>opt;
