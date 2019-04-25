@@ -469,3 +469,34 @@ cout<<"\n3. Back to Main Menu";
 cout<<"\n\nEnter Option: ";
 
 cin>>opt;
+switch(opt)
+
+{  case 1:
+
+cout<<"\nEnter Room Number: ";
+
+cin>>rno;
+
+i=0;
+
+for(i=0;i<count;i++)
+
+{   if(rooms[i].roomNumber==rno)
+
+{   flag=1;
+
+}  }  if(flag==1)
+
+{   cout<<"\nRoom Number is Present.\nPlease enter unique Number";
+
+flag=0;
+
+getch();   }
+
+else
+
+{  rooms[count]=room.addRoom(rno);
+
+count++;    }
+
+break;
